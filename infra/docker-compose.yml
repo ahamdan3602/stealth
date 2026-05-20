@@ -1,0 +1,31 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: stealth
+      POSTGRES_PASSWORD: stealth
+      POSTGRES_DB: stealth
+    ports:
+      - "5432:5432"
+    volumes:
+      - stealth_pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U stealth"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build: ../backend
+    environment:
+      DATABASE_URL: postgresql+psycopg://stealth:stealth@postgres:5432/stealth
+      JWT_SECRET: dev-secret-change-me
+      ENV: dev
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+
+volumes:
+  stealth_pg:

@@ -65,9 +65,9 @@ pytest
 
 ## Roadmap
 
-1. Auth + RBAC + Postgres (this milestone)
-2. Ingestion + Pinecone with ACL metadata
-3. LangChain RAG chain + LangSmith tracing
+1. Auth + RBAC + Postgres (completed)
+2. Ingestion + Pinecone with ACL metadata (in  progress)
+3. LangChain RAG chain + LangSmith tracing (in progress)
 4. NeMo Guardrails (input/output rails, self-correction loop)
 5. Ragas eval harness in CI
 6. Next.js frontend

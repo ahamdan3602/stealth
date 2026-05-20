@@ -1,0 +1,51 @@
+CLINICAL DRUG REFERENCE — SYNTHETIC (for development only)
+
+=== PARACETAMOL (Acetaminophen) ===
+Indications: Mild to moderate pain; fever reduction.
+Standard Adult Dose: 500–1000 mg every 4–6 hours. Maximum 4 g/day.
+Contraindications: Severe hepatic impairment. Avoid in active alcohol use disorder.
+Key Interactions: Warfarin (increases anticoagulant effect at high doses). Rifampicin (reduces plasma levels).
+Monitoring: LFTs for long-term use. Overdose risk is dose-dependent; N-acetylcysteine is the antidote.
+
+=== AMOXICILLIN ===
+Indications: Bacterial infections — respiratory tract, urinary tract, skin, otitis media.
+Standard Adult Dose: 250–500 mg three times daily (oral). Severe infections: 500 mg–1 g TDS.
+Contraindications: Penicillin hypersensitivity. Use with caution in mononucleosis (risk of rash).
+Key Interactions: Methotrexate (increased toxicity). Anticoagulants (monitor INR).
+Monitoring: Renal function in prolonged therapy. Signs of Clostridium difficile colitis.
+
+=== METFORMIN ===
+Indications: Type 2 diabetes mellitus. First-line agent alongside diet modification.
+Standard Adult Dose: 500 mg twice daily initially; increase to max 2–3 g/day in divided doses.
+Contraindications: eGFR < 30 mL/min/1.73 m². Iodinated contrast procedures (hold 48 h before/after).
+Key Interactions: Alcohol (lactic acidosis risk). Cimetidine (increases metformin plasma levels).
+Monitoring: eGFR at baseline and annually. Vitamin B12 every 2–3 years (depletion risk).
+
+=== ATORVASTATIN ===
+Indications: Hypercholesterolaemia; primary and secondary cardiovascular prevention.
+Standard Adult Dose: 10–80 mg once daily (evening preferred for lipid synthesis rhythm).
+Contraindications: Active liver disease. Pregnancy and breastfeeding.
+Key Interactions: Clarithromycin / erythromycin (increase statin levels, myopathy risk). Fusidic acid (avoid combination).
+Monitoring: LFTs before starting and if symptomatic. CK if myalgia develops.
+
+=== SALBUTAMOL (Albuterol) ===
+Indications: Acute bronchospasm in asthma and COPD. Exercise-induced bronchoconstriction.
+Standard Adult Dose (inhaler): 100–200 mcg (1–2 puffs) as needed, up to 4 times daily.
+Nebuliser: 2.5 mg in 2.5 mL saline, may repeat every 20 min in acute setting.
+Contraindications: Hypersensitivity to salbutamol or excipients.
+Key Interactions: Non-selective beta-blockers (antagonise bronchodilation). Loop diuretics (hypokalaemia risk with high doses).
+Monitoring: Heart rate, tremor, potassium in acute/high-dose use.
+
+=== WARFARIN ===
+Indications: VTE treatment and prophylaxis; AF stroke prevention; mechanical heart valves.
+Standard Adult Dose: Individualised — target INR 2–3 (most indications), 2.5–3.5 (mechanical valves).
+Contraindications: Active major bleeding. Pregnancy (teratogen). Recent CNS/eye surgery.
+Key Interactions: Numerous — any medication change requires INR monitoring. High risk with azole antifungals, amiodarone, NSAIDs.
+Monitoring: INR. Weekly until stable, then monthly.
+
+=== CLINICAL RED FLAGS (chest pain) ===
+Immediate referral criteria:
+- Crushing, central chest pain radiating to jaw/left arm: suspect ACS — activate emergency protocol.
+- Pleuritic chest pain + dyspnoea + recent immobility: suspect PE — D-dimer / CTPA pathway.
+- Tearing interscapular pain + hypertension: suspect aortic dissection — immediate imaging.
+- Fever + productive cough + focal chest signs: pneumonia — assess severity (CURB-65).

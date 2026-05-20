@@ -71,9 +71,16 @@ def test_patient_cannot_access_clinical_scope(client):
 
 
 def test_ingest_requires_admin_role(client):
+    _payload = {
+        "data": {"doc_type": "clinical"},
+        "files": {"file": ("test.txt", b"Sample content.", "text/plain")},
+    }
+
     clinician_token = _register_and_login(client, "doc3@example.com", "pw", "clinician")
     r = client.post(
         "/ingest",
+        data={"doc_type": "clinical"},
+        files={"file": ("test.txt", b"Sample content.", "text/plain")},
         headers={"Authorization": f"Bearer {clinician_token}"},
     )
     assert r.status_code == 403
@@ -81,6 +88,8 @@ def test_ingest_requires_admin_role(client):
     admin_token = _register_and_login(client, "boss2@example.com", "pw", "admin")
     r = client.post(
         "/ingest",
+        data={"doc_type": "clinical"},
+        files={"file": ("test.txt", b"Sample content.", "text/plain")},
         headers={"Authorization": f"Bearer {admin_token}"},
     )
     assert r.status_code == 202

@@ -1,0 +1,37 @@
+ADMINISTRATIVE BILLING & COMPLIANCE POLICY — SYNTHETIC (for development only)
+
+=== SECTION 1: BILLING CODE STANDARDS ===
+All clinical encounters must be coded within 72 hours of the visit.
+Primary diagnosis codes must follow ICD-10-CM. Secondary codes are required when they influence billing.
+Upcoding or undercoding is a compliance violation subject to internal audit and corrective action.
+Revenue cycle staff must complete annual coding certification renewal by Q1 of each year.
+
+=== SECTION 2: INSURANCE VERIFICATION ===
+Pre-authorisation is required for:
+- Elective surgical procedures
+- Advanced imaging (MRI, PET, CT beyond standard protocol)
+- Specialist referrals outside the approved network
+- Durable medical equipment over $500
+
+Verification must be completed before the day of service. Failure to obtain authorisation results in a claim denial risk and is recorded in the staff performance log.
+
+=== SECTION 3: PATIENT FINANCIAL RESPONSIBILITY ===
+Co-pays are collected at the time of service. No exceptions without Director approval.
+Self-pay discount: 20% if payment is made in full at time of service; 10% on payment plans.
+Charity care applications must be submitted with income verification within 30 days of the first bill.
+Accounts over 90 days outstanding are referred to the external collections agency unless a payment plan is active.
+
+=== SECTION 4: CLAIM SUBMISSION TIMELINES ===
+Primary claims: submit within 30 days of service date.
+Secondary claims: submit within 30 days of primary EOB receipt.
+Appeals: submit within 60 days of denial date. Appeals require clinical documentation from the treating provider.
+
+=== SECTION 5: HIPAA BILLING COMPLIANCE ===
+Billing staff may access only the minimum necessary clinical information required for coding.
+Accessing patient records beyond billing scope is a HIPAA violation and grounds for immediate suspension.
+All billing communications (statements, EOBs) must be sent to the patient's address of record, not a third party, unless an authorised release is on file.
+
+=== SECTION 6: INTERNAL AUDIT SCHEDULE ===
+Random billing audits are conducted quarterly. A 5% sample of claims per department is reviewed.
+Audit findings are shared with department heads within 10 business days.
+Recoupment from overpaid claims is processed within the same billing cycle as discovery.

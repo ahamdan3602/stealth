@@ -21,5 +21,16 @@ class Settings(BaseSettings):
     pinecone_api_key: str = "pc-placeholder"
     pinecone_index: str = "stealth-medical"
 
+    # LLM — model used by the RAG chain
+    chat_model: str = "gpt-4o"
+
+    # LangSmith — tracing and observability (optional; skipped if placeholder)
+    langsmith_api_key: str = "ls-placeholder"
+    langsmith_project: str = "medguard-ai"
+
+    # Guardrails (milestone 4)
+    guardrail_groundedness_threshold: float = 0.7   # below this → self-correct
+    guardrail_model: str = "gpt-4o-mini"            # cheap model for groundedness scoring
+
 
 settings = Settings()

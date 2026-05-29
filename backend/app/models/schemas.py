@@ -28,3 +28,4 @@ class ChatRequest(BaseModel):
 class ChatResponse(BaseModel):
     answer: str
     citations: list[str] = []
+    guardrail: str | None = None  # set when a rail triggered; None means clean pass

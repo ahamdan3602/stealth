@@ -1,0 +1,29 @@
+# NeMo Guardrails configuration
+# https://docs.nvidia.com/nemo/guardrails/latest/
+#
+# NOTE: The LLM pipeline is implemented in runner.py (pure Python) due to a
+# langchain-core version conflict between nemoguardrails 0.17 and langchain 1.x.
+# These files define the same architecture; swapping in LLMRails requires only
+# changing runner.py once the dependency conflict is resolved.
+
+models:
+  - type: main
+    engine: openai
+    model: gpt-4o
+
+rails:
+  input:
+    flows:
+      - check prompt injection
+      - check off topic
+  output:
+    flows:
+      - check groundedness
+
+instructions:
+  - type: general
+    content: |
+      You are a secure medical information assistant named MedGuard.
+      You only answer questions related to clinical care, medications,
+      administrative healthcare policies, and patient health information.
+      Always cite sources using [1], [2] notation from the provided context.

@@ -1,0 +1,13 @@
+# Output guardrail flows — Colang DSL
+# Groundedness check and self-correction loop.
+# Implemented in actions.py / runner.py (Python).
+
+# ── Groundedness ──────────────────────────────────────────────────────────────
+
+define flow check groundedness
+  $score = execute check_groundedness
+  if $score < 0.7
+    execute self_correct
+    bot $corrected_answer
+  else
+    bot $answer

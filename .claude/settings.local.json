@@ -5,7 +5,20 @@
       "Bash(./.venv/Scripts/python.exe -m pytest -v)",
       "Bash(./.venv/Scripts/python.exe -m pip install -e \".[dev]\" -q)",
       "Bash(./.venv/Scripts/python.exe -c \"from langchain_text_splitters import RecursiveCharacterTextSplitter; print\\('ok'\\)\")",
-      "Bash(./.venv/Scripts/python.exe -m pip install langchain-text-splitters -q)"
+      "Bash(./.venv/Scripts/python.exe -m pip install langchain-text-splitters -q)",
+      "Bash(./.venv/Scripts/python.exe -c \"import langchain_core.language_models.fake as f; print\\(dir\\(f\\)\\)\")",
+      "Bash(./.venv/Scripts/python.exe -c \"from langchain_core.language_models.fake_chat_models import FakeListChatModel; print\\('ok'\\)\")",
+      "Bash(./.venv/Scripts/python.exe -m pip install nemoguardrails --dry-run)",
+      "Bash(./.venv/Scripts/python.exe -m pip install nemoguardrails -q)",
+      "Bash(./.venv/Scripts/python.exe -m pytest tests/unit/test_chain.py -v)",
+      "Bash(./.venv/Scripts/python.exe -m pytest -q)",
+      "Bash(npm --version)",
+      "Bash(Remove-Item *)",
+      "Bash(rm \"C:\\\\Users\\\\Abdul\\\\tutorials\\\\@sandbox\\\\@claude\\\\stealth\\\\frontend\\\\.gitkeep\")",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-turbopack --yes)",
+      "Bash(npm run *)",
+      "Bash(DATABASE_URL=\"sqlite:///./dev.db\" ./.venv/Scripts/python.exe scripts/create_user.py)",
+      "Bash(DATABASE_URL=sqlite:///./dev.db ./.venv/Scripts/python.exe -c ' *)"
     ]
   }
 }

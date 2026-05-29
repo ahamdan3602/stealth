@@ -1,6 +1,12 @@
 """
-Milestone 1 acceptance tests: /chat enforces role → scope mapping.
+RBAC acceptance tests: /chat enforces role → scope mapping.
+
+The two 200-path tests mock run_chain so the suite stays offline
+(no real Pinecone or OpenAI calls needed to verify access control).
 """
+from unittest.mock import patch
+
+_FAKE_CHAIN_RESULT = {"answer": "mocked answer", "citations": ["doc.txt"]}
 
 
 def test_health(client):
@@ -31,13 +37,14 @@ def test_unauthenticated_chat_is_401(client):
 
 def test_clinician_can_access_clinical_scope(client):
     token = _register_and_login(client, "doc@example.com", "pw", "clinician")
-    r = client.post(
-        "/chat",
-        json={"message": "hello", "scope": "clinical"},
-        headers={"Authorization": f"Bearer {token}"},
-    )
+    with patch("app.api.chat.guarded_run", return_value=_FAKE_CHAIN_RESULT):
+        r = client.post(
+            "/chat",
+            json={"message": "hello", "scope": "clinical"},
+            headers={"Authorization": f"Bearer {token}"},
+        )
     assert r.status_code == 200
-    assert "stub:clinical" in r.json()["answer"]
+    assert r.json()["answer"] == "mocked answer"
 
 
 def test_clinician_cannot_access_admin_scope(client):
@@ -52,11 +59,12 @@ def test_clinician_cannot_access_admin_scope(client):
 
 def test_admin_can_access_admin_scope(client):
     token = _register_and_login(client, "boss@example.com", "pw", "admin")
-    r = client.post(
-        "/chat",
-        json={"message": "hello", "scope": "admin"},
-        headers={"Authorization": f"Bearer {token}"},
-    )
+    with patch("app.api.chat.guarded_run", return_value=_FAKE_CHAIN_RESULT):
+        r = client.post(
+            "/chat",
+            json={"message": "hello", "scope": "admin"},
+            headers={"Authorization": f"Bearer {token}"},
+        )
     assert r.status_code == 200
 
 
@@ -71,11 +79,6 @@ def test_patient_cannot_access_clinical_scope(client):
 
 
 def test_ingest_requires_admin_role(client):
-    _payload = {
-        "data": {"doc_type": "clinical"},
-        "files": {"file": ("test.txt", b"Sample content.", "text/plain")},
-    }
-
     clinician_token = _register_and_login(client, "doc3@example.com", "pw", "clinician")
     r = client.post(
         "/ingest",

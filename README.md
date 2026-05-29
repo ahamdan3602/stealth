@@ -34,24 +34,24 @@ MedGuard AI is a full-stack application. Every layer has exactly one job, and se
 └────────────────────────┬────────────────────────────────┘
                          │ HTTPS + JWT Bearer token
 ┌────────────────────────▼────────────────────────────────┐
-│                 FastAPI Backend                          │
+│                 FastAPI Backend                         │
 │              Python 3.14 · SQLAlchemy                   │
 │                                                         │
-│  ┌─────────────┐  ┌──────────────┐  ┌───────────────┐  │
-│  │  JWT Auth   │  │  RBAC Layer  │  │  Audit Logger │  │
-│  │  bcrypt pw  │  │ 4-role matrix│  │ every request │  │
-│  └─────────────┘  └──────────────┘  └───────────────┘  │
+│  ┌─────────────┐  ┌──────────────┐  ┌───────────────┐   │
+│  │  JWT Auth   │  │  RBAC Layer  │  │  Audit Logger │   │
+│  │  bcrypt pw  │  │ 4-role matrix│  │ every request │   │
+│  └─────────────┘  └──────────────┘  └───────────────┘   │
 └────────────────────────┬────────────────────────────────┘
                          │ Role verified, request proceeds
 ┌────────────────────────▼────────────────────────────────┐
-│              NeMo Guardrails (Input Rails)               │
+│              NeMo Guardrails (Input Rails)              │
 │                                                         │
 │   Prompt injection check → Off-topic check              │
 │         (regex-based, zero LLM cost)                    │
 └────────────────────────┬────────────────────────────────┘
                          │ Input clean, chain runs
 ┌────────────────────────▼────────────────────────────────┐
-│            LangChain RAG Chain (LCEL)                    │
+│            LangChain RAG Chain (LCEL)                   │
 │                                                         │
 │  retrieve(query, role)  →  format_context               │
 │    →  role-specific prompt  →  ChatOpenAI (GPT-4o)      │
@@ -59,14 +59,14 @@ MedGuard AI is a full-stack application. Every layer has exactly one job, and se
 └──────────┬───────────────────────┬──────────────────────┘
            │                       │
 ┌──────────▼──────────┐  ┌────────▼──────────────────────┐
-│      Pinecone        │  │         OpenAI                 │
-│  Serverless index    │  │  text-embedding-3-small        │
-│  1536-dim cosine     │  │  GPT-4o (chat)                 │
-│  ACL metadata filter │  │  GPT-4o-mini (groundedness)    │
+│      Pinecone       │  │         OpenAI                │
+│  Serverless index   │  │  text-embedding-3-small       │
+│  1536-dim cosine    │  │  GPT-4o (chat)                │
+│  ACL metadata filter│  │  GPT-4o-mini (groundedness )  │
 └─────────────────────┘  └───────────────────────────────┘
            │
 ┌──────────▼──────────────────────────────────────────────┐
-│         NeMo Guardrails (Output Rail)                    │
+│         NeMo Guardrails (Output Rail)                   │
 │                                                         │
 │  check_groundedness(answer, context) → score 0–1        │
 │  score < 0.7  →  self_correct()  →  re-run LLM          │
